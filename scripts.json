@@ -4,33 +4,10 @@
     "title": "Gravity Hub",
     "game": "Blox Fruits",
     "icon": "🍎",
-    "desc": "1. Gravity Hub Script [Official] – No Key, Auto Farm, Auto Candy, Auto V4, Bring Fruits",
+    "desc": "Gravity Hub Script [Official] – No Key, Auto Farm, Auto Candy, Auto V4, Bring Fruits",
     "tags": ["hot", "farm"],
     "category": "popular",
     "copies": 9841,
-    "code": loadstring(game:HttpGet("https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua"))()
-    ")"
-  },
-  {
-    "id": 2,
-    "title": "Auto Farm Coins",
-    "game": "Pet Simulator X",
-    "icon": "🐾",
-    "desc": "Auto kumpulin koin & diamond otomatis tanpa harus klik manual.",
-    "tags": ["hot", "autofarm"],
-    "category": "simulator",
-    "copies": 7203,
-    "code": "-- Pet Sim X Auto Farm by RBX Hub\nlocal hrp = game.Players.LocalPlayer.Character.HumanoidRootPart\nlocal farming = true\ntask.spawn(function()\n    while farming do\n        for _, v in pairs(workspace:GetDescendants()) do\n            if v:IsA(\"Model\") and v.Name:find(\"Coin\") then\n                hrp.CFrame = v:GetPivot()\n                task.wait(0.08)\n            end\n        end\n        task.wait(0.5)\n    end\nend)\nprint(\"[RBX Hub] Auto Farm Aktif!\")"
-  },
-  {
-    "id": 3,
-    "title": "Inf Jump + Noclip",
-    "game": "Brookhaven",
-    "icon": "🏘️",
-    "desc": "Infinite jump dan noclip. Tekan N untuk aktifkan noclip kapan aja!",
-    "tags": ["utility"],
-    "category": "utility",
-    "copies": 5567,
-    "code": "-- Brookhaven Utility by RBX Hub\nlocal UIS = game:GetService(\"UserInputService\")\nlocal RS = game:GetService(\"RunService\")\nlocal char = game.Players.LocalPlayer.Character\nlocal hum = char.Humanoid\nlocal noclip = false\nUIS.JumpRequest:Connect(function()\n    hum:ChangeState(Enum.HumanoidStateType.Jumping)\nend)\nUIS.InputBegan:Connect(function(i)\n    if i.KeyCode==Enum.KeyCode.N then noclip = not noclip end\nend)\nRS.Stepped:Connect(function()\n    if noclip then\n        for _,v in pairs(char:GetDescendants()) do\n            if v:IsA(\"BasePart\") then v.CanCollide=false end\n        end\n    end\nend)\nprint(\"[RBX Hub] Inf Jump aktif | N = Noclip\")"
+    "code": "loadstring(game:HttpGet('https://raw.githubusercontent.com/Dev-GravityHub/BloxFruit/refs/heads/main/Main.lua'))()"
   }
 ]
