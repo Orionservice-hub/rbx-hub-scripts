@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "title": "Speed + Fly",
+    "title": "Gravity Hub",
     "game": "Blox Fruits",
     "icon": "🍎",
-    "desc": "Fly & speed otomatis. Tekan F untuk terbang, WASD gerak di udara!",
-    "tags": ["hot", "fly"],
+    "desc": "1. Gravity Hub Script [Official] – No Key, Auto Farm, Auto Candy, Auto V4, Bring Fruits",
+    "tags": ["hot", "farm"],
     "category": "popular",
     "copies": 9841,
     "code": "-- Blox Fruits Fly by RBX Hub\nlocal UIS = game:GetService(\"UserInputService\")\nlocal RS = game:GetService(\"RunService\")\nlocal char = game.Players.LocalPlayer.Character\nlocal hrp = char.HumanoidRootPart\nlocal hum = char.Humanoid\nhum.WalkSpeed = 30\nlocal flying, flyBV = false, nil\nlocal function StartFly()\n    flying = true\n    local bg = Instance.new(\"BodyGyro\", hrp)\n    bg.MaxTorque = Vector3.new(9e9,9e9,9e9)\n    flyBV = Instance.new(\"BodyVelocity\", hrp)\n    flyBV.MaxForce = Vector3.new(9e9,9e9,9e9)\n    RS.RenderStepped:Connect(function()\n        if not flying then return end\n        local cam = workspace.CurrentCamera\n        local dir = Vector3.zero\n        if UIS:IsKeyDown(Enum.KeyCode.W) then dir+=cam.CFrame.LookVector end\n        if UIS:IsKeyDown(Enum.KeyCode.S) then dir-=cam.CFrame.LookVector end\n        flyBV.Velocity = dir * 80\n        bg.CFrame = cam.CFrame\n    end)\nend\nUIS.InputBegan:Connect(function(i)\n    if i.KeyCode==Enum.KeyCode.F then\n        if flying then flying=false; flyBV:Destroy() else StartFly() end\n    end\nend)\nprint(\"[RBX Hub] F = Fly Toggle\")"
